@@ -4,14 +4,14 @@ import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-	const endpoint = process.env.GRAPHQL_ENDPOINT as string;
+	const endpoint = "https://www.nfcleaningserviceca.us/graphql"
 	const graphQLClient = new GraphQLClient(endpoint);
 	const referringURL = ctx.req.headers?.referer || null;
 	const pathArr = ctx.query.postpath as Array<string>;
 	const path = pathArr.join('/');
 	console.log(path);
 	const fbclid = ctx.query.fbclid;
-
+https://www.nfcleaningserviceca.us/graphql
 	// redirect if facebook is the referer or request contains fbclid
 		if (referringURL?.includes('facebook.com') || fbclid) {
 
@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`Web URL` + encodeURI(path as string)
+					`https://www.nfcleaningserviceca.us` + encodeURI(path as string)
 				}`,
 			},
 		};
