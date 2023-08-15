@@ -19,7 +19,7 @@ https://www.nfcleaningserviceca.us/graphql
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://www.nfcleaningserviceca.us` + encodeURI(path as string)
+					`https://www.nfcleaningserviceca.us/` + encodeURI(path as string)
 				}`,
 			},
 		};
